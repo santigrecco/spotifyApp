@@ -1,8 +1,6 @@
 # Globant - Bootcamp Angular: Front-end
 
 ## Bienvenidos al bootcamp!
-  
-Recomendamos que instales previamente todas las dependencias necesarias siguiendo los pasos de [configuracion del proyecto](#configuracion-del-proyecto) antes del evento, y el sábado estaremos actualizando este repo con lo restante.
 
 ## Requerimientos
 
@@ -16,7 +14,5 @@ Recomendamos que instales previamente todas las dependencias necesarias siguiend
 3) levantar servidor con `npm run dev`
 
 Abri tu browser y navega: `http://localhost:3000`
-
-Ante algun problema: cristian.bietti @ globant dot com
 
 Enjoy!
