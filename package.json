@@ -1,5 +1,5 @@
 {
-  "name": "globant-workshop-2016",
+  "name": "globant-training-2016",
   "version": "0.0.1",
   "scripts": {
     "test": "gulp test",
