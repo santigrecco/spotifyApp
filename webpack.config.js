@@ -17,7 +17,7 @@ module.exports = {
     devServer: {
         filename: "index.bundle.js",
         contentBase: "./src",
-        port: 3000,
+        port: 3030,
         open: true,
         watch: true,
         publicPath: "/",

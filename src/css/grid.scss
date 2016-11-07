@@ -1,0 +1,31 @@
+$full: 100%;
+
+
+
+.col-1{
+  width: calc( #{$full} / 6 );
+}
+
+.col-2{
+  width: calc( calc( #{$full} / 6 ) * 2 );
+}
+
+.col-3{
+  width: calc( calc( #{$full} / 6 ) * 3 );
+}
+
+.col-4{
+  width: calc( calc( #{$full} / 6 ) * 4 );
+}
+
+.col-5{
+  width: calc( calc( #{$full} / 6 ) * 5 );
+}
+
+.col-6{
+  width: $full;
+}
+
+.row > *{
+  float: left;
+}
