@@ -8,9 +8,16 @@ export function routes($routeProvider, $locationProvider) {
     });
 
     $routeProvider.when('/',{
-      templateUrl: 'app/views/index.html'
+      templateUrl: 'app/views/index.html',
+      controller: 'indexController'
     }).
     when('/album-detail', {
-      templateUrl: 'views/album-detail.html'
+      templateUrl: 'app/views/album-detail.html'
+    })
+    .when('/band-albums', {
+      templateUrl: 'app/views/band-album'
+    })
+    .when('/results', {
+      templateUrl: 'app/views/results.html'
     });
 }

@@ -1,4 +1,9 @@
-body {
+$violet: #5856D6;
+$light-violet: #C644FC;
+
+
+body{
+  //for the header to have a 100% width
   font-family: 'Source Sans Pro', sans-serif;
   font-family: 'Raleway', sans-serif;
   margin: 0px;
@@ -11,7 +16,7 @@ body {
   margin-right: auto;
 }
 
-.header-content {
+.header-content{
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -23,20 +28,22 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
   font-family: 'Rancho', cursive;
   font-size: 40px;
-  background: #c644fc;
-  background: -moz-linear-gradient(top, #c644fc 0%, #5856d6 100%);
-  background: -webkit-gradient(left top, left bottom, color-stop(0%, #c644fc), color-stop(100%, #5856d6));
-  background: -webkit-linear-gradient(top, #c644fc 0%, #5856d6 100%);
-  background: -o-linear-gradient(top, #c644fc 0%, #5856d6 100%);
-  background: -ms-linear-gradient(top, #c644fc 0%, #5856d6 100%);
-  background: linear-gradient(to bottom, #c644fc 0%, #5856d6 100%);
+  // header background gradient
+  background: rgba(198,68,252,1);
+  background: -moz-linear-gradient(top, rgba(198,68,252,1) 0%, rgba(88,86,214,1) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(198,68,252,1)), color-stop(100%, rgba(88,86,214,1)));
+  background: -webkit-linear-gradient(top, rgba(198,68,252,1) 0%, rgba(88,86,214,1) 100%);
+  background: -o-linear-gradient(top, rgba(198,68,252,1) 0%, rgba(88,86,214,1) 100%);
+  background: -ms-linear-gradient(top, rgba(198,68,252,1) 0%, rgba(88,86,214,1) 100%);
+  background: linear-gradient(to bottom, rgba(198,68,252,1) 0%, rgba(88,86,214,1) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c644fc', endColorstr='#5856d6', GradientType=0 );
 }
 
-.searchBar-index {
-  border: 1px solid #5856D6;
+
+.searchBar-index{
+  border: 1px solid $violet;
   border-radius: 10px;
-  padding-left: 5px;
+  padding-left:5px;
   height: 40px;
   background: white url("http://www.myiconfinder.com/uploads/iconsets/20-20-d83cd937aec2e189c7c64761ab72829d-search.png") 10px no-repeat;
   transition: 1s;
@@ -44,13 +51,12 @@ body {
   margin-right: 0px;
 }
 
-.notEmptySearchbar {
+.notEmptySearchbar{
   background-position: -50px;
   text-indent: 10px;
   outline: none;
 }
-
-.searchBar-index:focus {
+.searchBar-index:focus{
   background-position: -50px;
   text-indent: 10px;
   outline: none;

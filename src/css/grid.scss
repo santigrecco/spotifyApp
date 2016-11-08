@@ -28,4 +28,9 @@ $full: 100%;
 
 .row > *{
   float: left;
+
+}
+
+.row{
+  display: flex;
 }

@@ -25,3 +25,7 @@
 .row > * {
   float: left;
 }
+
+.row {
+  display: flex;
+}
