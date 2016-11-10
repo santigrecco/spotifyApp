@@ -18,6 +18,7 @@ export function routes($routeProvider, $locationProvider) {
       templateUrl: 'app/views/band-album'
     })
     .when('/results', {
-      templateUrl: 'app/views/results.html'
+      templateUrl: 'app/views/results.html',
+      controller: 'resultsController'
     });
 }

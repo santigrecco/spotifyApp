@@ -1,18 +1,21 @@
-export function indexController($scope, $rootScope, $window, $cookies,
-   ApiService, State){
+export function indexController($scope, $rootScope, $window, $location,
+  ApiService, State){
 
-  // $scope.ic.search = '';
+  this.state = {};
   if (State.get('ic') != undefined) {
     this.state = State.get('ic');
   }
   $scope.ic = this.state;
 
-
   $scope.go = function(search){
-    ApiService.searchArtist(search)
-      .then(function(data){
-        console.log(data);
-      });
+    if(search == ''){
+      alert('Error, search field is empty');
+      
+    }else{
+      State.delete('ic');
+      $rootScope.artistName = search;
+      $location.path('/results');
+    }
   }.bind(this);
 
   $window.onbeforeunload = function(){

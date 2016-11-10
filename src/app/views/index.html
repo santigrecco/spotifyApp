@@ -1,6 +1,7 @@
 <div class="consigna__container">
   <h2>Search Spotify artists</h2>
-  <input type="text" class="col-5 searchBar-index" ng-model="ic.search" ng-class="{'notEmptySearchbar': search != ''}"  ng-keypress="($event.which === 13)?go(search):0"/>
+  <input type="text" class="col-5 searchBar-index" ng-model="ic.search" ng-class="{'notEmptySearchbar': search != ''}"
+   ng-keypress="($event.which === 13)?go(ic.search):0"/>
   <h3>My Favorites</h3>
   <!-- <section ng-if="favs != undefined || favs =! []">
     <img src="https://i.scdn.co/image/66302ca80395b6be3600d5f0ef69db9e0c43f4f5" alt="">
