@@ -14,7 +14,7 @@ body {
 .header-content {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   height: 100px;
   padding-left: 10px;
@@ -31,6 +31,11 @@ body {
   background: -ms-linear-gradient(top, #c644fc 0%, #5856d6 100%);
   background: linear-gradient(to bottom, #c644fc 0%, #5856d6 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c644fc', endColorstr='#5856d6', GradientType=0 );
+}
+
+.header-content > img {
+  height: 60px;
+  width: 200px;
 }
 
 .searchBar-index {
