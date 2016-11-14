@@ -5,6 +5,13 @@ body {
   margin-top: 0px;
 }
 
+.container {
+  background-color: whitesmoke;
+  min-height: 700px;
+  position: absolute;
+  width: 100%;
+}
+
 .consigna__container {
   width: 50%;
   margin-left: auto;
@@ -59,4 +66,72 @@ body {
   background-position: -50px;
   text-indent: 10px;
   outline: none;
+}
+
+/*  Animations  */
+.container.ng-leave {
+  z-index: 9999;
+}
+
+.container.ng-enter {
+  z-index: 8888;
+}
+
+.container.index.ng-enter {
+  animation: indexEnter 0.3s both ease;
+}
+
+.container.index.ng-leave {
+  animation: indexLeave 0.3s both ease;
+}
+
+.container.results.ng-enter {
+  animation: resultsEnter 0.3s both ease;
+}
+
+.container.results.ng-leave {
+  animation: resultsLeave 0.3s both ease;
+}
+
+.container.results-backwards.ng-enter {
+  animation: resultsEnter 0.3s both ease;
+}
+
+.container.results-backwards.ng-leave {
+  animation: resultsBLeave 0.3s both ease;
+}
+
+@keyframes indexEnter {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes indexLeave {
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes resultsEnter {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes resultsLeave {
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes resultsBLeave {
+  to {
+    opacity: 0;
+    transform: translateX(100%);
+  }
 }
