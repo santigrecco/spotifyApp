@@ -16,10 +16,11 @@ export function resultsController($scope, $rootScope, $window, $location,
   window.addEventListener('popstate', function(){
     document.getElementsByClassName('container results')[0]
       .classList.add('results-backwards');
+    
   });
 
-  //IT MAY GENERATE A ANIMATION BUG ON PUSHSTATE
-  // left fix code down
+  //IT MAY GENERATE AN ANIMATION BUG ON PUSHSTATE
+  //fix code down
 
   // window.addEventListener('pushstate', function(){
   //   document.getElementsByClassName('container results')[0]

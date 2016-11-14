@@ -1,9 +1,7 @@
 export function indexController($scope, $rootScope, $window, $location,
   ApiService, State){
 
-
   $scope.pageClass = 'index';
-
   $scope.show = true;
   this.state = {};
   if (State.get('ic') != undefined) {
@@ -22,13 +20,9 @@ export function indexController($scope, $rootScope, $window, $location,
     }
   }.bind(this);
 
-    $scope.changeState = function(){
-        $scope.show = !$scope.show;
-        console.log($scope.show);
-    }
-
   $window.onbeforeunload = function(){
     State.save('ic', this.state);
     console.log('something');
   }.bind(this);
+
 }
