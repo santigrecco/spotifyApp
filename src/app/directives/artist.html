@@ -1,0 +1,8 @@
+<ul class="artists-list col-6">
+    <li ng-repeat="artist in artists" class="col-3 artist-li" >
+      <div class="artist-item" ng-click="click(artist)">
+        <img src={{artist.images[0].url}} class="artist-item-img" >
+        <h4> {{artist.name}} </h4>
+      </div>
+    </li>
+</ul>

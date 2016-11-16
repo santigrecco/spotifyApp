@@ -1,12 +1,10 @@
-<div class="consigna__container">
-  <h2>Search results for "{{rc.searched}}"</h1>
+<div class="views-container">
+  <h2>Artists</h2>
+  <p>You are currently searching: "{{rc.searched}}"</p>
+  <input-component></input-component>
   <!-- <h2>ACA TIENEN QUE CARGAR UNA GRILLA CON LOS ARTISTAS QUE APARECIERON COMO RESULTADO DE LA BUSQUEDA ANTERIOR</h2> -->
   <section class="artist">
-    <ul>
-      <li ng-repeat="artist in rc.artists">
-        {{artist.name}}
-      </li>
-    </ul>
+    <artists ng-if="rc.artists != undefined" artists="rc.artists"></artists>
   </section>
 
 </div>

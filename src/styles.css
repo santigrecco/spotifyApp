@@ -1,21 +1,33 @@
-body {
+body, html {
   font-family: 'Source Sans Pro', sans-serif;
   font-family: 'Raleway', sans-serif;
   margin: 0px;
   margin-top: 0px;
+  height: 100%;
+}
+
+ul {
+  list-style: none;
 }
 
 .container {
-  background-color: whitesmoke;
   min-height: 700px;
   position: absolute;
   width: 100%;
 }
 
-.consigna__container {
+.views-container {
+  background-color: whitesmoke;
+  margin-top: 0px;
   width: 50%;
+  padding: 40px;
+  min-height: 500px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.views-container > h2 {
+  margin-top: 0px;
 }
 
 .header-content {
@@ -53,7 +65,7 @@ body {
   background: white url("http://www.myiconfinder.com/uploads/iconsets/20-20-d83cd937aec2e189c7c64761ab72829d-search.png") 10px no-repeat;
   transition: 1s;
   text-indent: 35px;
-  margin-right: 0px;
+  margin: 40px 0px 40px 0px;
 }
 
 .notEmptySearchbar {
@@ -65,6 +77,93 @@ body {
   background-position: -50px;
   text-indent: 10px;
   outline: none;
+}
+
+.artists-list {
+  list-style: none;
+  margin: 40px 0px 40px 0px;
+  padding: 0px;
+}
+
+.artist-li {
+  display: inline-block;
+}
+
+.artist-item {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  border-color: transparent;
+  transition: 1s;
+}
+
+.artist-item:hover {
+  background-color: #817fe0;
+  color: white;
+}
+
+.artist-item-img {
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  background-image: url("/noImgAvalible.jpg");
+  background-size: 80px 60px;
+  background-position: center center;
+}
+
+.band-albums-container {
+  width: 50%;
+  min-height: 600px;
+  margin: 0 auto 0 auto;
+  background-color: whitesmoke;
+}
+
+.band-detail {
+  padding-top: 30px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  border-bottom: 1.5px solid;
+  border-bottom-color: #5856D6;
+  padding-bottom: 40px;
+}
+
+.band-detail-img {
+  height: 140px;
+  width: 140px;
+  margin-right: 30px;
+}
+
+.band-detail-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.albums {
+  margin-top: 20px;
+}
+
+.albums > ul {
+  padding: 0px;
+}
+
+.album-li {
+  display: inline-block;
+  transition: 1s;
+  cursor: pointer;
+}
+
+.album-li:hover {
+  background-color: #817fe0;
+  color: white;
+}
+
+.album-content {
+  display: flex;
+  flex-direction: row;
 }
 
 /*  Animations  */
@@ -92,12 +191,12 @@ body {
   animation: resultsLeave 0.3s both ease;
 }
 
-.container.results-backwards.ng-enter {
+.container.backward.ng-enter {
   animation: resultsEnter 0.3s both ease;
 }
 
-.container.results-backwards.ng-leave {
-  animation: resultsBLeave 0.3s both ease;
+.container.backward.ng-leave {
+  animation: backward 0.3s both ease;
 }
 
 @keyframes indexEnter {
@@ -128,9 +227,16 @@ body {
   }
 }
 
-@keyframes resultsBLeave {
+@keyframes backward {
   to {
     opacity: 0;
     transform: translateX(100%);
+  }
+}
+
+@keyframes backward_enter {
+  from {
+    transform: translate(-100%);
+    opacity: 0;
   }
 }
