@@ -10,18 +10,19 @@ export function routes($routeProvider, $locationProvider) {
     });
 
     $routeProvider.when('/',{
-      templateUrl: 'app/views/index.html',
+      templateUrl: '/app/views/index.html',
       controller: 'indexController',
     }).
-    when('/album-detail', {
-      templateUrl: 'app/views/album-detail.html'
+    when('/album-detail/:albumId', {
+      templateUrl: '/app/views/album-detail.html',
+      controller: 'albumDetailController'
     })
-    .when('/band-albums', {
-      templateUrl: 'app/views/band-albums.html',
+    .when('/band-albums/:bandId', {
+      templateUrl: '/app/views/band-albums.html',
       controller:'bandAlbumsController'
     })
-    .when('/results', {
-      templateUrl: 'app/views/results.html',
+    .when('/results/:search', {
+      templateUrl: '/app/views/results.html',
       controller: 'resultsController'
     });
 }

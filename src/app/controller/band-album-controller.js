@@ -1,13 +1,24 @@
-export function bandAlbumsController($scope, ApiService){
+export function bandAlbumsController($scope, $routeParams, $location, ApiService){
   this.state = {};
   $scope.bac = this.state;
-  this.state.artist = ApiService.artist;
 
-  console.log(this.state.artist);
+  if(ApiService.artist == undefined){
+    ApiService.searchArtistById($routeParams.bandId)
+      .then((response)=>{
+        this.state.artist = response.data;
+      });
+  }else{
+    this.state.artist = ApiService.artist;
+  }
 
-  ApiService.searchArtistAlbums(this.state.artist.id)
+
+  ApiService.searchArtistAlbums($routeParams.bandId)
     .then((response)=>{
       this.state.albums = response.data.items;
-      console.log(response);
     });
+
+
+    $scope.goAlbum = (album)=>{
+      $location.path(`/album-detail/${album.id}`);
+    }
 }

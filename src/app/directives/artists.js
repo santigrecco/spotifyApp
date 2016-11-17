@@ -6,7 +6,7 @@ export function ArtistDirective (){
       scope: {
         artists: '=',
       },
-      templateUrl: 'app/directives/artist.html',
+      templateUrl: '/app/directives/artist.html',
       controller: controller
     };
 }
@@ -21,6 +21,6 @@ function dLink($scope, $location, ApiService, State){
 function controller($scope, $location, ApiService) {
   $scope.click = function(artist){
     ApiService.artist = artist;
-    $location.path('/band-albums');
+    $location.path(`/band-albums/${artist.id}`);
   }
 }

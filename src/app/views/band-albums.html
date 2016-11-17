@@ -8,8 +8,8 @@
     <div class="albums col-6">
       <ul>
         <li ng-repeat="album in bac.albums" class="album-li col-3">
-          <div class="album-content">
-            <img src={{album.images[0].url}} class="artist-item-img" alt="">
+          <div class="album-content" ng-click="goAlbum(album)">
+            <img ng-src="{{album.images[0].url}}" class="artist-item-img" alt="">
             <h4>{{album.name}}</h4>
           </div>
         </li>

@@ -1,7 +1,7 @@
 export var inputComponent =  {
     controller: inputController,
     controllerAs: 'myCtrl',
-    templateUrl: 'app/components/input.html',
+    templateUrl: '/app/components/input.html',
     bindings: {
       refresh: '='
     }
@@ -13,8 +13,8 @@ export var inputComponent =  {
         alert('Error, search field is empty');
       }else{
         ApiService.search = search;
-        $location.path('/results');
-        $rootScope.$emit('refresh');
+        $location.path(`/results/${search}`);
+        // $rootScope.$emit('refresh');
       }
     }.bind(this);
   }

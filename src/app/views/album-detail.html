@@ -1,14 +1,22 @@
-<div>
-    <h2>EN ESTA SECCION TIENE QUE APARECER LA TAPA DEL DISCO SELECCIONADO JUNTO CON LA LISTA DE TEMAS QUE TIENE EL DISCO.</h2>
-    <img src="https://i.scdn.co/image/66302ca80395b6be3600d5f0ef69db9e0c43f4f5" alt="">
-    <ul>
-        <li>Track 1</li>
-        <li>Track 2</li>
-        <li>Track 3</li>
-        <li>Track 4</li>
-        <li>Track 5</li>
-        <li>Track 6</li>
-        <li>Track 7</li>
-        <li>Track 8</li>
-    </ul>
+<div class="album-detail-container" >
+    <!-- <h2>EN ESTA SECCION TIENE QUE APARECER LA TAPA DEL DISCO SELECCIONADO JUNTO CON LA LISTA DE TEMAS QUE TIENE EL DISCO.</h2> -->
+    <section class="album-details" >
+      <img src={{adc.album.images[0].url}} alt="">
+      <div class="album-desc">
+        <h2>{{adc.album.name}}</h2>
+        <h4 ng-repeat="artist in adc.album.artists">
+          {{artist.name}}
+        </h4>
+        <p>{{adc.album.label}}</p>
+      </div>
+    </section>
+    <div class="tracks-container">
+      <ul>
+        <li ng-repeat = "album in adc.tracks" class="tracks">
+          <h4 class="track-name">{{album.name}}</h4>
+          <!-- <img class="track-img" src="/star-grey.png" /> -->
+          <star fav="true"></star>
+        </li>
+      </ul>
+    </div>
 </div>

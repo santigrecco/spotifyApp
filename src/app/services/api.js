@@ -5,7 +5,7 @@ export function ApiService($http) {
     this.album;
 
     this.searchArtist = (search) => {
-      var endpoint =this.baseUrl +'/v1/search?type=artist&q='+encodeURI(search);
+      let endpoint =this.baseUrl +'/v1/search?type=artist&q='+encodeURI(search);
       return $http.get(endpoint)
         .then((response) =>{
           return response;
@@ -14,6 +14,16 @@ export function ApiService($http) {
         });
     }
 
+    this.searchArtistById = (id) =>{
+      let endpoint = this.baseUrl + `/v1/artists/${id} `;
+      return $http.get(endpoint)
+        .then((response)=>{
+          this.artist = response.data;
+          return response;
+        }, function(error){
+          console.log(error);
+        })
+    }
 
     this.searchArtistAlbums = (id) => {
       let endpoint =  this.baseUrl + `/v1/artists/${id}/albums`;
@@ -24,4 +34,16 @@ export function ApiService($http) {
           console.log(error);
         })
     }
+
+    this.searchAlbum = (id) =>{
+      let endpoit = this.baseUrl + `/v1/albums/${id}`;
+      return $http.get(endpoit)
+      .then((response)=>{
+          this.album = response;
+          return response;
+        }, function(error){
+          console.log(error);
+        })
+    }
+
 }

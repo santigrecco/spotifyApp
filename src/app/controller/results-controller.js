@@ -1,6 +1,5 @@
-export function resultsController($scope, $rootScope, $window, $location,
+export function resultsController($scope, $rootScope, $window, $routeParams, $location,
    ApiService, State){
-
 
   this.state = {};
   // if (State.get('rc') != undefined) {
@@ -9,7 +8,7 @@ export function resultsController($scope, $rootScope, $window, $location,
   $scope.rc = this.state;
 
   //delete the class added for popstate
-  document.getElementsByClassName('container ')[0]
+  document.getElementsByClassName('container')[0]
     .classList.remove('backward');
 
   $scope.pageClass = 'results';
@@ -17,7 +16,7 @@ export function resultsController($scope, $rootScope, $window, $location,
 
 
   $scope.refreshList =  ()=>{
-    ApiService.searchArtist(ApiService.search)
+    ApiService.searchArtist($routeParams.search)
     .then((response) =>{
       this.state.artists = response.data.artists.items;
     });
@@ -26,7 +25,7 @@ export function resultsController($scope, $rootScope, $window, $location,
 
   //event emitted by the input component for refreshing the the ApiService query
 
-  $rootScope.$on('refresh', $scope.refreshList);
+  // $rootScope.$on('refresh', $scope.refreshList);
 
 
 
