@@ -58,6 +58,10 @@ ul{
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c644fc', endColorstr='#5856d6', GradientType=0 );
 }
 
+.header-logo{
+  cursor: pointer;
+}
+
 .header-content > img {
   height: 60px;
   width: 200px;
