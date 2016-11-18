@@ -2,7 +2,6 @@ export function indexController($scope, $window, $location, ApiService, State){
 
   $scope.pageClass = 'index';
 
-
   // $scope.go = function(search){
   //   if(search == ''){
   //     alert('Error, search field is empty');

@@ -2,17 +2,14 @@ export function resultsController($scope, $rootScope, $window, $routeParams, $lo
    ApiService, State){
 
   this.state = {};
-  // if (State.get('rc') != undefined) {
-  //   this.state = State.get('rc');
-  // }
-  $scope.rc = this.state;
 
+  $scope.rc = this.state;
+  this.state.searched = $routeParams.search;
   //delete the class added for popstate
   document.getElementsByClassName('container')[0]
     .classList.remove('backward');
 
   $scope.pageClass = 'results';
-  this.state.searched = ApiService.search;
 
 
   $scope.refreshList =  ()=>{

@@ -211,16 +211,26 @@ ul{
 
 .track-name{
   flex: 1;
+  margin-left: 10px;
 }
 
-.track-img{
+.tracks-list {
+  padding: 0px;
+}
+
+.star{
   flex: 0;
   margin-right: 10px;
   height: 25px;
   width: 25px;
   align-self: center;
+  cursor: pointer;
+  transition: 1s;
 }
 
+.tracks:nth-child(even){
+  background-color: lighten(#D7D7D7, 7);
+}
 
 /*  Animations  */
 

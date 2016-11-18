@@ -4,7 +4,8 @@ import {indexController, resultsController, bandAlbumsController } from './contr
 import {albumDetailController} from './controller';
 import {ArtistDirective} from './directives/artists';
 import {inputComponent} from './components/input';
-import {starComponent} from './components/star'
+import {starComponent} from './components/star';
+import {StarDirective} from './directives/star';
 import 'angular-cookies';
 import 'angular-animate';
 
@@ -14,8 +15,9 @@ angular.module('App', ['ngRoute', 'ngCookies', 'ngAnimate'])
     .service('ApiService', ApiService)
     .service('State', State)
     .directive('artists', ArtistDirective)
+    .directive('star', StarDirective)
     .component('inputComponent', inputComponent)
-    .component('star', starComponent)
+    // .component('star', starComponent)
     .controller('indexController', indexController)
     .controller('resultsController', resultsController)
     .controller('bandAlbumsController', bandAlbumsController)
