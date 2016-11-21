@@ -12,11 +12,11 @@ class Fav {
 export function albumDetailController($scope, $rootScope, $routeParams, ApiService){
     this.state = {};
     $scope.adc = this.state;
-
+    $scope.playing = {};
     // animation config
         $scope.pageClass = 'last';
-        document.getElementsByClassName('container')[0]
-                  .classList.remove('backward');
+        // document.getElementsByClassName('container')[0]
+        //           .classList.remove('backward');
 
     // animation config
 
@@ -46,7 +46,6 @@ export function albumDetailController($scope, $rootScope, $routeParams, ApiServi
      $scope.toggleFav = (track)=>{
          let fav = new Fav(track.name, this.state.album.name,
              this.state.album.images[0].url, track.id);
-         console.log(fav);
 
          if($scope.isFav(track.id)){
              let index = this.state.favs.map(function(el){
@@ -61,8 +60,14 @@ export function albumDetailController($scope, $rootScope, $routeParams, ApiServi
      }
 
      $scope.playToggle = (track)=>{
-         $rootScope.$emit('pause', track.id);
-         $rootScope.$emit('play', track);
+        if(track != $scope.playing){
+          $scope.playing = track;
+          $rootScope.$emit('pause', track.id);
+          $rootScope.$emit('play', track);
+        }else{
+          $scope.playing = {};
+          $rootScope.$emit('pause', track.id);
+        }
      }
 
 

@@ -1,6 +1,7 @@
 import {routes} from './routes';
 import {ApiService, State} from './services';
-import {indexController, resultsController, bandAlbumsController, headerController } from './controller';
+import {indexController, resultsController, bandAlbumsController, headerController,
+footerPlayerController } from './controller';
 import {albumDetailController} from './controller';
 import {ArtistDirective} from './directives/artists';
 import {inputComponent} from './components/input';
@@ -23,7 +24,8 @@ angular.module('App', ['ngRoute', 'ngCookies', 'ngAnimate'])
     .controller('resultsController', resultsController)
     .controller('bandAlbumsController', bandAlbumsController)
     .controller('albumDetailController', albumDetailController)
-    .controller('headerController', headerController);
+    .controller('headerController', headerController)
+    .controller('footerPlayerController', footerPlayerController);
 
 
     angular.module('App')
@@ -33,7 +35,7 @@ angular.module('App', ['ngRoute', 'ngCookies', 'ngAnimate'])
                 if(routeToIndex(next) < routeToIndex(current)){
                     console.log('back');
                     document.getElementsByClassName('container')[0]
-                        .classList.add('backward');       
+                        .classList.add('backward');
                 }
             })
 

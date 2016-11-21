@@ -248,6 +248,7 @@ ul{
   cursor: pointer;
 }
 
+
 .tracks:nth-child(even){
   background-color: lighten(#D7D7D7, 7);
 }
@@ -263,8 +264,39 @@ play-stop{
   cursor: pointer;
 }
 
+
+.footer-player{
+  width: 100%;
+  background-color: #2B2B2B;
+  height: 80px;
+  position: fixed;
+  bottom: 0px;
+  color: black;
+  transition: 0.3s;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
 /*  Animations  */
 
+
+.footer-player.ng-enter{
+  height: 0px;
+}
+
+.footer-player.ng-enter.ng-enter-active{
+  height: 80px;
+}
+
+.footer-player.ng-leave{
+  height: 80px;
+}
+.footer-player.ng-leave.ng-leave-active{
+  height: 0px;
+}
 
 .container.ng-leave 	{ z-index:9999; }
 .container.ng-enter 	{ z-index:8888; }
@@ -312,7 +344,6 @@ play-stop{
 // .container.middle.backward.ng-leave{
 //   animation: backward $viewAnimationTime both ease;
 // }
-
 
 
 
