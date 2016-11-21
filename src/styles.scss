@@ -1,6 +1,6 @@
 $violet: #5856D6;
 $light-violet: #C644FC;
-$viewAnimationTime: 0.3s;
+$viewAnimationTime: 2s;
 
 body, html{
   //for the header to have a 100% width
@@ -66,13 +66,30 @@ ul{
   height: 60px;
   width: 200px;
 }
+
 .searchBar-index{
   border: 1px solid $violet;
   border-radius: 10px;
   padding-left:5px;
   height: 40px;
-  background: white url("http://www.myiconfinder.com/uploads/iconsets/20-20-d83cd937aec2e189c7c64761ab72829d-search.png") 10px no-repeat;
+  background: white url("/search.png") 10px no-repeat;
+  background-size: 20px 20px;
   transition: 1s;
+  text-indent: 35px;
+  margin: 40px 0px 40px 0px;
+}
+
+.header-searchBar > .searchBar-index{
+  padding-left:5px;
+  height: 40px;
+  background: rgba(0,0,0,0) url("/search-header.png") 10px no-repeat;
+  background-size: 20px 20px;
+  transition: 1s;
+  padding-bottom: 0px;
+  color: white;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid white;
   text-indent: 35px;
   margin: 40px 0px 40px 0px;
 }
@@ -229,11 +246,21 @@ ul{
   width: 25px;
   align-self: center;
   cursor: pointer;
-  transition: 1s;
 }
 
 .tracks:nth-child(even){
   background-color: lighten(#D7D7D7, 7);
+}
+
+play-stop{
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+.play-icon{
+  height: 25px;
+  width: 25px;
+  cursor: pointer;
 }
 
 /*  Animations  */
@@ -242,26 +269,50 @@ ul{
 .container.ng-leave 	{ z-index:9999; }
 .container.ng-enter 	{ z-index:8888; }
 
-.container.index.ng-enter{
+.first.ng-enter{
   animation: indexEnter $viewAnimationTime both ease;
 }
-.container.index.ng-leave{
+.first.ng-leave{
   animation: indexLeave $viewAnimationTime both ease;
 }
 
-.container.results.ng-enter{
-  animation: resultsEnter $viewAnimationTime both ease;
+// .middle.ng-enter{
+//   animation: middleEnter $viewAnimationTime both ease;
+// }
+// .middle.ng-leave{
+//   animation: middleLeave $viewAnimationTime both ease;
+// }
+
+.container.ng-enter{
+  animation: middleEnter $viewAnimationTime both ease;
 }
-.container.results.ng-leave{
-  animation: resultsLeave $viewAnimationTime both ease;
+.container.ng-leave{
+  animation: middleLeave $viewAnimationTime both ease;
 }
 
-.container.backward.ng-enter{
-    animation: resultsEnter $viewAnimationTime both ease;
-  }
+.backward{
+  // background-color: red;
+}
+
 .container.backward.ng-leave{
-    animation: backward $viewAnimationTime both ease;
-  }
+  animation: backward_leave $viewAnimationTime both ease;
+  background-color: red;
+}
+
+.container.middle.backward.ng-enter,.container.first.backward.ng-enter{
+  animation: backward_enter $viewAnimationTime both ease;
+  background-color: red;
+}
+
+// .container.backward.ng-enter{
+//   animation: backward_enter $viewAnimationTime both ease;
+// }
+
+
+// .container.middle.backward.ng-leave{
+//   animation: backward $viewAnimationTime both ease;
+// }
+
 
 
 
@@ -279,18 +330,20 @@ ul{
   }
 }
 
-@keyframes resultsEnter {
+@keyframes middleEnter {
   from{
-    transform: translateX(100%);
     opacity: 0;
+    transform: translateX(100%);
   }
 }
-@keyframes resultsLeave  {
-    to{
-      transform: translateX(-100%);
-      opacity: 0;
-    }
+@keyframes middleLeave {
+  to{
+    opacity: 0;
+    transform: translateX(-100%);
+  }
 }
+
+
 @keyframes backward {
   to{
     opacity: 0;
@@ -300,7 +353,19 @@ ul{
 
 @keyframes backward_enter {
   from{
-    transform: translate(-100%);
+    transform: translateX(-100%);
+    // opacity: 0;
+    background-color: green;
+  }
+  to{
+    color: red;
+    background-color: blue;
+  }
+}
+
+@keyframes backward_leave {
+  to{
     opacity: 0;
+    transform: translateX(100%);
   }
 }

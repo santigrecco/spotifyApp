@@ -15,6 +15,7 @@
         <li ng-repeat = "track in adc.tracks" class="tracks">
           <h4 class="track-name">{{track.name}}</h4>
           <!-- <img class="track-img" src="/star-grey.png" /> -->
+          <play-stop play="false" track-id="track.id" play-toggle="playToggle(track)"></play-stop>
           <star fav="isFav(track.id)" toggle = "toggleFav(track)"class="star"></star>
         </li>
       </ul>

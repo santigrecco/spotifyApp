@@ -9,9 +9,17 @@ class Fav {
 }
 
 
-export function albumDetailController($scope, $routeParams, ApiService){
+export function albumDetailController($scope, $rootScope, $routeParams, ApiService){
     this.state = {};
     $scope.adc = this.state;
+
+    // animation config
+        $scope.pageClass = 'last';
+        document.getElementsByClassName('container')[0]
+                  .classList.remove('backward');
+
+    // animation config
+
     if(localStorage.getItem('favs') != undefined){
       this.state.favs = JSON.parse(localStorage.getItem('favs'));
       this.state.favs = this.state.favs.map(function(el){
@@ -51,4 +59,11 @@ export function albumDetailController($scope, $routeParams, ApiService){
             localStorage.setItem('favs', JSON.stringify(this.state.favs));
         }
      }
+
+     $scope.playToggle = (track)=>{
+         $rootScope.$emit('pause', track.id);
+         $rootScope.$emit('play', track);
+     }
+
+
 }

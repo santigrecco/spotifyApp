@@ -1,5 +1,16 @@
-export function bandAlbumsController($scope, $routeParams, $location, ApiService){
+export function bandAlbumsController($scope, $window, $routeParams, $location, ApiService){
   this.state = {};
+
+  // animation config
+  $scope.pageClass = 'middle';
+  // document.getElementsByClassName('container')[0]
+  //             .classList.remove('backward');
+  // $window.onbeforeunload = function(){
+  // document.getElementsByClassName('container')[0]
+  //               .classList.remove('backward');
+  // }
+
+// animation config
   $scope.bac = this.state;
 
   if(ApiService.artist == undefined){
@@ -21,4 +32,5 @@ export function bandAlbumsController($scope, $routeParams, $location, ApiService
     $scope.goAlbum = (album)=>{
       $location.path(`/album-detail/${album.id}`);
     }
+
 }

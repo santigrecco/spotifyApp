@@ -5,12 +5,17 @@ export function resultsController($scope, $rootScope, $window, $routeParams, $lo
 
   $scope.rc = this.state;
   this.state.searched = $routeParams.search;
-  //delete the class added for popstate
-  document.getElementsByClassName('container')[0]
-    .classList.remove('backward');
 
-  $scope.pageClass = 'results';
+  // animation config
+    $scope.pageClass = 'middle';
+    // document.getElementsByClassName('container')[0]
+    //             .classList.remove('backward');
+    // $window.onbeforeunload = function(){
+    //   document.getElementsByClassName('container')[0]
+    //               .classList.remove('backward');
+    // }
 
+// animation config
 
   $scope.refreshList =  ()=>{
     ApiService.searchArtist($routeParams.search)
@@ -20,19 +25,10 @@ export function resultsController($scope, $rootScope, $window, $routeParams, $lo
   }
   $scope.refreshList();
 
-  //event emitted by the input component for refreshing the the ApiService query
-
-  // $rootScope.$on('refresh', $scope.refreshList);
 
 
 
 
-
-  // listener added for detecting a 'back' click and animate correctly
-  window.addEventListener('popstate', function(){
-    document.getElementsByClassName('container results')[0]
-      .classList.add('backward');
-  });
 
 
 

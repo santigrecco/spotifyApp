@@ -66,8 +66,24 @@ ul {
   border-radius: 10px;
   padding-left: 5px;
   height: 40px;
-  background: white url("http://www.myiconfinder.com/uploads/iconsets/20-20-d83cd937aec2e189c7c64761ab72829d-search.png") 10px no-repeat;
+  background: white url("/search.png") 10px no-repeat;
+  background-size: 20px 20px;
   transition: 1s;
+  text-indent: 35px;
+  margin: 40px 0px 40px 0px;
+}
+
+.header-searchBar > .searchBar-index {
+  padding-left: 5px;
+  height: 40px;
+  background: transparent url("/search-header.png") 10px no-repeat;
+  background-size: 20px 20px;
+  transition: 1s;
+  padding-bottom: 0px;
+  color: white;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid white;
   text-indent: 35px;
   margin: 40px 0px 40px 0px;
 }
@@ -215,11 +231,22 @@ ul {
   width: 25px;
   align-self: center;
   cursor: pointer;
-  transition: 1s;
 }
 
 .tracks:nth-child(even) {
   background-color: #e9e9e9;
+}
+
+play-stop {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.play-icon {
+  height: 25px;
+  width: 25px;
+  cursor: pointer;
 }
 
 /*  Animations  */
@@ -231,28 +258,30 @@ ul {
   z-index: 8888;
 }
 
-.container.index.ng-enter {
-  animation: indexEnter 0.3s both ease;
+.first.ng-enter {
+  animation: indexEnter 2s both ease;
 }
 
-.container.index.ng-leave {
-  animation: indexLeave 0.3s both ease;
+.first.ng-leave {
+  animation: indexLeave 2s both ease;
 }
 
-.container.results.ng-enter {
-  animation: resultsEnter 0.3s both ease;
+.container.ng-enter {
+  animation: middleEnter 2s both ease;
 }
 
-.container.results.ng-leave {
-  animation: resultsLeave 0.3s both ease;
-}
-
-.container.backward.ng-enter {
-  animation: resultsEnter 0.3s both ease;
+.container.ng-leave {
+  animation: middleLeave 2s both ease;
 }
 
 .container.backward.ng-leave {
-  animation: backward 0.3s both ease;
+  animation: backward_leave 2s both ease;
+  background-color: red;
+}
+
+.container.middle.backward.ng-enter, .container.first.backward.ng-enter {
+  animation: backward_enter 2s both ease;
+  background-color: red;
 }
 
 @keyframes indexEnter {
@@ -269,17 +298,17 @@ ul {
   }
 }
 
-@keyframes resultsEnter {
+@keyframes middleEnter {
   from {
-    transform: translateX(100%);
     opacity: 0;
+    transform: translateX(100%);
   }
 }
 
-@keyframes resultsLeave {
+@keyframes middleLeave {
   to {
-    transform: translateX(-100%);
     opacity: 0;
+    transform: translateX(-100%);
   }
 }
 
@@ -292,7 +321,18 @@ ul {
 
 @keyframes backward_enter {
   from {
-    transform: translate(-100%);
+    transform: translateX(-100%);
+    background-color: green;
+  }
+  to {
+    color: red;
+    background-color: blue;
+  }
+}
+
+@keyframes backward_leave {
+  to {
     opacity: 0;
+    transform: translateX(100%);
   }
 }

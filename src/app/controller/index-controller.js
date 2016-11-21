@@ -1,7 +1,11 @@
 export function indexController($scope, $window, $location, ApiService, State){
 
-  $scope.pageClass = 'index';
+  // animation config
+    $scope.pageClass = 'first';
+    // document.getElementsByClassName('container')[0]
+    //             .classList.remove('backward');
 
+  // animation config
   // $scope.go = function(search){
   //   if(search == ''){
   //     alert('Error, search field is empty');
@@ -12,8 +16,10 @@ export function indexController($scope, $window, $location, ApiService, State){
   //   }
   // }.bind(this);
 
-  $window.onbeforeunload = function(){
-    State.save('ic', this.state);
-  }.bind(this);
+  // $window.onbeforeunload = function(){
+  //   // State.save('ic', this.state);
+  //   document.getElementsByClassName('container')[0]
+  //               .classList.remove('backward');
+  // }.bind(this);
 
 }
