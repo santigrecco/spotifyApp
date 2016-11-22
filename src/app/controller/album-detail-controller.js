@@ -63,12 +63,12 @@ export function albumDetailController($scope, $rootScope, $routeParams, ApiServi
         if(track != $scope.playing){
           $scope.playing = track;
           $rootScope.$emit('pause', track.id);
-          $rootScope.$emit('play', track);
+          $rootScope.$emit('play', {track: track, album:this.state.album});
         }else{
           $scope.playing = {};
           $rootScope.$emit('pause', track.id);
         }
      }
 
-
+     
 }

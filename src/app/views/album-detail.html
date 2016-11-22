@@ -24,8 +24,10 @@
 
 <footer ng-controller="footerPlayerController"  >
   <div class="footer-player" ng-if="play">
-    <p>{{name}}</p>
-    <p>another text</p>
+    <img ng-src="{{img}}" alt="" />
+    <b>{{name}}</b>
+    <audio ng-src="{{audio}}" ng-model="audioPlayer"  controls="controls">
+    </audio>
   </div>
 
 </footer>

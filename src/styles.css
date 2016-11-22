@@ -3,7 +3,7 @@ body, html {
   font-family: 'Raleway', sans-serif;
   margin: 0px;
   margin-top: 0px;
-  height: 100%;
+  text-overflow: ellipsis;
 }
 
 ul {
@@ -255,13 +255,18 @@ play-stop {
   height: 80px;
   position: fixed;
   bottom: 0px;
-  color: black;
   transition: 0.3s;
   color: white;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
+  font-weight: bold;
+}
+
+.footer-player img {
+  height: 70px;
+  width: 70px;
 }
 
 /*  Animations  */

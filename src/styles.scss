@@ -1,15 +1,17 @@
 $violet: #5856D6;
 $light-violet: #C644FC;
+$green: #22C97D;
 $viewAnimationTime: 2s;
 
 body, html{
-  //for the header to have a 100% width
   font-family: 'Source Sans Pro', sans-serif;
   font-family: 'Raleway', sans-serif;
   margin: 0px;
   margin-top: 0px;
-  height: 100%;
+  text-overflow: ellipsis;
 }
+
+
 
 ul{
   list-style: none;
@@ -271,14 +273,20 @@ play-stop{
   height: 80px;
   position: fixed;
   bottom: 0px;
-  color: black;
   transition: 0.3s;
   color: white;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
+  font-weight: bold;
+
+  img{
+    height: 70px;
+    width: 70px;
+  }
 }
+
 
 /*  Animations  */
 
