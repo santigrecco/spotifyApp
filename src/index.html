@@ -11,9 +11,9 @@
 <body ng-strict-di>
     <header ng-controller="headerController">
       <div class="row">
-        <div class="col-6 header-content">
+        <div class="col-6 header-content" ng-class="{'header-input': showInput}">
             <img src="/app/img/SpotySearchLogo.png" class="header-logo" alt="SpotySearch" ng-click="home()" />
-            <!-- <input-component class="header-searchBar"></input-component> -->
+            <input-component class="header-searchBar" ng-show="showInput "></input-component>
         </div>
       </div>
     </header>

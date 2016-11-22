@@ -61,6 +61,11 @@ ul {
   width: 200px;
 }
 
+.header-input {
+  justify-content: space-around;
+  padding: 0 40px 0 40px;
+}
+
 .searchBar-index {
   border: 1px solid #5856D6;
   border-radius: 10px;
@@ -260,13 +265,50 @@ play-stop {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
-  font-weight: bold;
+  justify-content: center;
 }
 
 .footer-player img {
   height: 70px;
   width: 70px;
+}
+
+.footer-player audio {
+  width: 400px;
+}
+
+.footer-player * {
+  margin: 30px;
+}
+
+.index-fav-list {
+  padding: 0px;
+}
+
+.index-fav {
+  display: inline-flex;
+  height: 100px;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.index-fav h4 {
+  display: flex;
+  margin: 15px;
+}
+
+.index-fav-img {
+  flex: 0;
+  height: 90px;
+  width: 90px;
+}
+
+.index-unFav {
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+  margin-right: 30px;
 }
 
 /*  Animations  */
@@ -295,28 +337,27 @@ play-stop {
 }
 
 .first.ng-enter {
-  animation: indexEnter 2s both ease;
+  animation: indexEnter 0.3s both ease;
 }
 
 .first.ng-leave {
-  animation: indexLeave 2s both ease;
+  animation: indexLeave 0.3s both ease;
 }
 
 .container.ng-enter {
-  animation: middleEnter 2s both ease;
+  animation: middleEnter 0.3s both ease;
 }
 
 .container.ng-leave {
-  animation: middleLeave 2s both ease;
+  animation: middleLeave 0.3s both ease;
 }
 
 .container.backward.ng-leave {
-  animation: backward_leave 2s both ease;
-  background-color: red;
+  animation: backward_leave 0.3s both ease;
 }
 
-.container.middle.backward.ng-enter, .container.first.backward.ng-enter {
-  animation: backward_enter 2s both ease;
+.container.backward.ng-enter {
+  animation: backward_enter 0.3s both ease;
   background-color: red;
 }
 
@@ -370,5 +411,40 @@ play-stop {
   to {
     opacity: 0;
     transform: translateX(100%);
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .views-container, .band-albums-container, .album-detail-container {
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+  }
+  .container {
+    padding: 0px;
+    width: 100%;
+  }
+  .searchBar-index {
+    width: calc(100% - 20px) !important;
+  }
+  li {
+    width: 100% !important;
+  }
+  .big-img {
+    width: 100% !important;
+    height: 400px !important;
+  }
+  .band-detail, .album-details {
+    flex-direction: column !important;
+  }
+  .band-detail-info, .album-desc {
+    position: relative;
+    top: -200px;
+    height: 100px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
   }
 }

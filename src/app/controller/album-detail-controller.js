@@ -1,10 +1,11 @@
 // import {Fav} from './classes/favs';
 class Fav {
-     constructor(name, album, albumCover, id){
+     constructor(name, album, albumCover, id, albumId){
        this.name = name;
        this.album = album;
        this.albumCover = albumCover;
        this.id = id;
+       this.albumId = albumId;
      }
 }
 
@@ -23,7 +24,7 @@ export function albumDetailController($scope, $rootScope, $routeParams, ApiServi
     if(localStorage.getItem('favs') != undefined){
       this.state.favs = JSON.parse(localStorage.getItem('favs'));
       this.state.favs = this.state.favs.map(function(el){
-         return new Fav(el.name, el.album, el.albumCover, el.id);
+         return new Fav(el.name, el.album, el.albumCover, el.id, el.albumId);
       });
     }else{
       this.state.favs = [];
@@ -45,8 +46,8 @@ export function albumDetailController($scope, $rootScope, $routeParams, ApiServi
 
      $scope.toggleFav = (track)=>{
          let fav = new Fav(track.name, this.state.album.name,
-             this.state.album.images[0].url, track.id);
-
+             this.state.album.images[0].url, track.id, this.state.album.id);
+             console.log(fav);
          if($scope.isFav(track.id)){
              let index = this.state.favs.map(function(el){
                  return el.id;
@@ -70,5 +71,5 @@ export function albumDetailController($scope, $rootScope, $routeParams, ApiServi
         }
      }
 
-     
+
 }

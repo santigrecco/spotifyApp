@@ -7,7 +7,16 @@
    ng-class="{'notEmptySearchbar': ic.search != undefined && ic.search != ''}"
    ng-keypress="($event.which === 13)?go(ic.search):0"/> -->
   <input-component></input-component>
-  <h3>My Favorites</h3>
+  <section ng-if="favs != []">
+    <h3>My Favorites</h3>
+    <ul class="col-6 index-fav-list">
+      <li ng-repeat="fav in favs" class="col-3 index-fav">
+        <img ng-src="{{fav.albumCover}}" class="index-fav-img"alt="">
+        <h4>{{fav.name}}</h4>
+        <img src="/star-golden.png" ng-click="deleteFav(fav.id)" class="index-unFav" alt="">
+      </li>
+    </ul>
+  </section>
 
 
 </div>

@@ -33,7 +33,6 @@ angular.module('App', ['ngRoute', 'ngCookies', 'ngAnimate'])
             $rootScope.$on('$locationChangeStart',
              function(event, next, current){
                 if(routeToIndex(next) < routeToIndex(current)){
-                    console.log('back');
                     document.getElementsByClassName('container')[0]
                         .classList.add('backward');
                 }

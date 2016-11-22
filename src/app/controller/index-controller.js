@@ -1,25 +1,16 @@
 export function indexController($scope, $window, $location, ApiService, State){
 
-  // animation config
     $scope.pageClass = 'first';
-    // document.getElementsByClassName('container')[0]
-    //             .classList.remove('backward');
+    $scope.favs = [];
+    if(localStorage.getItem('favs')){
+      $scope.favs = JSON.parse(localStorage.getItem('favs'));
+    }
 
-  // animation config
-  // $scope.go = function(search){
-  //   if(search == ''){
-  //     alert('Error, search field is empty');
-  //   }else{
-  //     State.delete('ic');
-  //     ApiService.search = search;
-  //     $location.path(`/results/${search}`);
-  //   }
-  // }.bind(this);
-
-  // $window.onbeforeunload = function(){
-  //   // State.save('ic', this.state);
-  //   document.getElementsByClassName('container')[0]
-  //               .classList.remove('backward');
-  // }.bind(this);
-
+    $scope.deleteFav = function(id){
+      let index = $scope.favs.map(function(el){
+        return el.id;
+      }).indexOf(id);
+      $scope.favs.splice(index, 1);
+      localStorage.setItem('favs', JSON.stringify($scope.favs));
+    }
 }

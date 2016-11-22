@@ -1,7 +1,7 @@
 $violet: #5856D6;
 $light-violet: #C644FC;
 $green: #22C97D;
-$viewAnimationTime: 2s;
+$viewAnimationTime: 0.3s;
 
 body, html{
   font-family: 'Source Sans Pro', sans-serif;
@@ -67,6 +67,11 @@ ul{
 .header-content > img {
   height: 60px;
   width: 200px;
+}
+
+.header-input{
+  justify-content: space-around;
+  padding: 0 40px 0 40px;
 }
 
 .searchBar-index{
@@ -278,13 +283,50 @@ play-stop{
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
-  font-weight: bold;
+  justify-content: center;
+  // font-weight: bold;
 
   img{
     height: 70px;
     width: 70px;
   }
+
+  audio{
+    width: 400px;
+  }
+
+  *{
+    margin: 30px;
+  }
+}
+
+
+
+.index-fav-list{
+  padding: 0px;
+}
+.index-fav{
+  display: inline-flex;
+  height: 100px;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  h4{
+    display: flex;
+    margin: 15px;
+  }
+
+}
+.index-fav-img{
+  flex: 0;
+  height: 90px;
+  width: 90px;
+}
+.index-unFav{
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+  margin-right: 30px;
 }
 
 
@@ -336,10 +378,9 @@ play-stop{
 
 .container.backward.ng-leave{
   animation: backward_leave $viewAnimationTime both ease;
-  background-color: red;
 }
 
-.container.middle.backward.ng-enter,.container.first.backward.ng-enter{
+.container.backward.ng-enter{
   animation: backward_enter $viewAnimationTime both ease;
   background-color: red;
 }
@@ -406,5 +447,52 @@ play-stop{
   to{
     opacity: 0;
     transform: translateX(100%);
+  }
+}
+
+
+//media queries
+
+
+@media screen and (max-width: 900px)  {
+  .views-container, .band-albums-container, .album-detail-container{
+    width:100%;
+    margin: 0px;
+    padding: 0px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;;
+  }
+  .container{
+    padding: 0px;
+    width: 100%;
+  }
+  .band-detail-img{
+      // height: 100px;
+      // width: 100px;
+  }
+  .searchBar-index{
+    // background-color: red;
+    width: calc(100% - 20px) !important;
+  }
+  li{
+    width: 100% !important;
+  }
+
+  .big-img{
+    width: 100% !important;
+    height: 400px !important;
+  }
+
+  .band-detail, .album-details {
+    flex-direction: column !important;
+  }
+
+  .band-detail-info, .album-desc{
+    position: relative;
+    top: -200px;
+    height: 100px;
+    color: white;
+    background-color: rgba(0,0,0,0.7);
   }
 }
