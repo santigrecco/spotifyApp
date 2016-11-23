@@ -8,13 +8,15 @@ export var inputComponent =  {
   }
 
   function inputController($scope, $rootScope, $location,  ApiService){
+    $scope.ic = this;
+    this.search = '';
+    this.error = false;
     $scope.go = function(search){
       if(search == ''){
-        alert('Error, search field is empty');
+        this.error = true;
       }else{
         ApiService.search = search;
         $location.path(`/results/${search}`);
-        // $rootScope.$emit('refresh');
       }
     }.bind(this);
   }
