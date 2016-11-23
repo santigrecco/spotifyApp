@@ -3,6 +3,7 @@ body, html {
   font-family: 'Raleway', sans-serif;
   margin: 0px;
   margin-top: 0px;
+  box-sizing: border-box;
   text-overflow: ellipsis;
 }
 
@@ -311,6 +312,23 @@ play-stop {
   margin-right: 30px;
 }
 
+.sortDiv {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.sortButton {
+  background-color: transparent;
+  color: #5856D6;
+  font-size: 16px;
+  margin-right: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-end;
+  border: none;
+  box-shadow: none;
+}
+
 /*  Animations  */
 .footer-player.ng-enter {
   height: 0px;
@@ -414,21 +432,32 @@ play-stop {
   }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 800px) {
   .views-container, .band-albums-container, .album-detail-container {
     width: 100%;
     margin: 0px;
-    padding: 0px;
     justify-content: center;
     display: flex;
     flex-direction: column;
+    box-sizing: border-box;
   }
-  .container {
-    padding: 0px;
-    width: 100%;
+  .header-content {
+    padding: 10px;
+    padding-right: 30px;
+    box-sizing: border-box;
+  }
+  .header-input {
+    justify-content: space-between;
+  }
+  .header-searchBar .searchBar-index {
+    width: 100px !important;
+    background-size: 15px 15px;
+  }
+  .header-logo {
+    width: 40% !important;
   }
   .searchBar-index {
-    width: calc(100% - 20px) !important;
+    width: 100% !important;
   }
   li {
     width: 100% !important;
@@ -440,11 +469,26 @@ play-stop {
   .band-detail, .album-details {
     flex-direction: column !important;
   }
+  .band-detail {
+    padding: 0px;
+    border: none;
+  }
   .band-detail-info, .album-desc {
     position: relative;
-    top: -200px;
-    height: 100px;
     color: white;
     background-color: rgba(0, 0, 0, 0.7);
+  }
+  .sortDiv {
+    margin-top: 10px;
+  }
+  .footer-player b, .footer-player img {
+    margin: 5px;
+  }
+  .footer-player b {
+    width: 80px;
+  }
+  .footer-player audio {
+    flex: 1;
+    margin: 5px;
   }
 }

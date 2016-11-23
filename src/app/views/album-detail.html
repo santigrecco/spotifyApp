@@ -11,6 +11,11 @@
       </div>
     </section>
     <div class="tracks-container">
+      <div class="sortDiv">
+        <button type="button" ng-click="sort()" name="button" class="sortButton">
+          Sort by duration
+        </button>
+      </div>
       <ul class="tracks-list">
         <li ng-repeat = "track in adc.tracks" class="tracks">
           <h4 class="track-name">{{track.name}}</h4>
@@ -25,9 +30,9 @@
 <footer ng-controller="footerPlayerController"  >
   <div class="footer-player" ng-if="play">
     <img ng-src="{{img}}" alt="" />
-    <b>{{name}}</b>
-    <audio ng-src="{{audio}}" ng-model="audioPlayer"  controls="controls">
-    </audio>
+      <b>{{name}}</b>
+      <audio ng-src="{{audio}}" ng-model="audioPlayer"  controls="controls">
+      </audio>
   </div>
 
 </footer>

@@ -8,6 +8,7 @@ body, html{
   font-family: 'Raleway', sans-serif;
   margin: 0px;
   margin-top: 0px;
+  box-sizing: border-box;
   text-overflow: ellipsis;
 }
 
@@ -329,6 +330,24 @@ play-stop{
   margin-right: 30px;
 }
 
+.sortDiv{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.sortButton{
+  background-color:rgba(0,0,0,0);
+  color: $violet;
+  font-size: 16px;
+  margin-right: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-end;
+  border: none;
+  box-shadow: none;
+
+}
+
 
 /*  Animations  */
 
@@ -454,18 +473,39 @@ play-stop{
 //media queries
 
 
-@media screen and (max-width: 900px)  {
+@media screen and (max-width: 800px)  {
   .views-container, .band-albums-container, .album-detail-container{
-    width:100%;
+    width:100% ;
     margin: 0px;
-    padding: 0px;
+    // padding: 10px;
     justify-content: center;
     display: flex;
-    flex-direction: column;;
+    flex-direction: column;
+    box-sizing: border-box;
   }
   .container{
-    padding: 0px;
-    width: 100%;
+    // padding: 30px;
+    // width: 100%;
+  }
+
+  .header-content{
+    padding: 10px;
+    padding-right: 30px;
+    // justify-content: space-between;
+    box-sizing: border-box;
+  }
+  .header-input{
+    justify-content: space-between;
+  }
+  .header-searchBar{
+    // width: 100px !important;
+    .searchBar-index{
+      width: 100px !important;
+      background-size: 15px 15px;
+    }
+  }
+  .header-logo{
+    width: 40% !important;
   }
   .band-detail-img{
       // height: 100px;
@@ -473,7 +513,7 @@ play-stop{
   }
   .searchBar-index{
     // background-color: red;
-    width: calc(100% - 20px) !important;
+    width: 100% !important;
   }
   li{
     width: 100% !important;
@@ -488,11 +528,32 @@ play-stop{
     flex-direction: column !important;
   }
 
+  .band-detail{
+    padding: 0px;
+    border: none;
+  }
+
   .band-detail-info, .album-desc{
     position: relative;
-    top: -200px;
-    height: 100px;
+    // top: -200px;
+    // height: 100px;
     color: white;
     background-color: rgba(0,0,0,0.7);
+  }
+
+    .sortDiv{
+      margin-top: 10px;
+    }
+  .footer-player{
+    b, img{
+      margin: 5px;
+    }
+    b{
+      width: 80px;
+    }
+    audio{
+      flex: 1;
+      margin: 5px;
+    }
   }
 }

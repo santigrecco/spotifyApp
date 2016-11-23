@@ -34,6 +34,7 @@ export function albumDetailController($scope, $rootScope, $routeParams, ApiServi
     ApiService.searchAlbum($routeParams.albumId)
       .then((response)=>{
         this.state.tracks = response.data.tracks.items;
+        console.log(this.state.tracks);
         this.state.album = response.data;
         console.log(response);
       })
@@ -47,7 +48,6 @@ export function albumDetailController($scope, $rootScope, $routeParams, ApiServi
      $scope.toggleFav = (track)=>{
          let fav = new Fav(track.name, this.state.album.name,
              this.state.album.images[0].url, track.id, this.state.album.id);
-             console.log(fav);
          if($scope.isFav(track.id)){
              let index = this.state.favs.map(function(el){
                  return el.id;
@@ -71,5 +71,18 @@ export function albumDetailController($scope, $rootScope, $routeParams, ApiServi
         }
      }
 
-
+     $scope.sort = ()=>{
+         if(!this.state.sorted){
+             this.state.sorted = true;
+             $scope.oldTracks = this.state.tracks;
+             this.state.tracks.sort(function(a, b){
+                 return a.duration_ms - b.duration_ms;
+             });
+         }else{
+             this.state.sorted = false;
+             this.state.tracks.sort(function(a, b){
+                 return a.track_number - b.track_number;
+             })
+         }
+     }
 }
