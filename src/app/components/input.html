@@ -2,6 +2,7 @@
  ng-class="{'notEmptySearchbar': ic.search != undefined && ic.search != ''}"
  ng-keypress="($event.which === 13)?go(ic.search):0"/>
 
-<span class="input-error" ng-if='ic.error'>
+<p class="input-error" ng-if='ic.error'>
+  {{ic.error}}
   The search input can't be empty
-</span>
+</p>

@@ -91,7 +91,15 @@ ul {
   border-radius: 0;
   border-bottom: 1px solid white;
   text-indent: 35px;
-  margin: 40px 0px 40px 0px;
+  margin: 0px;
+}
+
+.header-searchBar > .input-error {
+  color: red;
+  margin: 3px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Raleway', sans-serif;
+  font-size: 17px;
 }
 
 .notEmptySearchbar {
@@ -107,8 +115,9 @@ ul {
 
 .input-error {
   color: red;
-  font-size: 18px;
-  margin-top: 20px;
+  font-size: 17px;
+  margin-top: 5px;
+  transition: 1s;
 }
 
 .artists-list {
@@ -336,6 +345,22 @@ play-stop {
 }
 
 /*  Animations  */
+.input-error.ng-enter {
+  opacity: 0;
+}
+
+.input-error.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+
+.input-error.ng-leave {
+  opacity: 1;
+}
+
+.input-error.ng-leave.ng-leave-active {
+  opacity: 0;
+}
+
 .footer-player.ng-enter {
   height: 0px;
 }
@@ -478,6 +503,12 @@ play-stop {
   .band-detail {
     padding: 0px;
     border: none;
+  }
+  .input-error {
+    font-size: 12px;
+  }
+  .header-searchBar > .input-error {
+    font-size: 12px;
   }
   .band-detail-info, .album-desc {
     position: relative;
